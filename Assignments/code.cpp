@@ -5,25 +5,20 @@ using namespace std;
 int main()
 {
 
-    int num;
-    cout << "Enter a number : ";
-    cin >> num;
-    if (num == 0)
+    int year;
+
+    cin >> year;
+    if (year % 4 == 0)
     {
-        cout << num << " is zero.";
+        cout << year << " is a leap year.";
     }
-    else if (num < 0)
+    else if (year % 400 == 0)
     {
-        cout << num << " is negative.";
-    }
-    else if (num > 0)
-    {
-        cout << num << " is positive.";
+        cout << year << " is a leap year.";
     }
     else
     {
-        cout << "Invalid Input.";
+        cout << year << " is not a leap year.";
     }
-
     return 0;
 }
