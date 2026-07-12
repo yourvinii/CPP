@@ -4,15 +4,26 @@ using namespace std;
 
 int main()
 {
-  
-int x = 10, y = 5; 
-int exp1 = (y * (x / y + x / y)); 
-int exp2 = (y * x / y + y * x / y); 
-cout << exp1 << " "; 
-cout << exp2 << "\n"; 
 
-
-
+    int num;
+    cout << "Enter a number : ";
+    cin >> num;
+    if (num == 0)
+    {
+        cout << num << " is zero.";
+    }
+    else if (num < 0)
+    {
+        cout << num << " is negative.";
+    }
+    else if (num > 0)
+    {
+        cout << num << " is positive.";
+    }
+    else
+    {
+        cout << "Invalid Input.";
+    }
 
     return 0;
 }
