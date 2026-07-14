@@ -20,11 +20,24 @@ void changeA ( int *ptr){
 int main()
 {
 
-    int a = 5;
 
-    changeA(&a);
+    int a = 32;
 
-    cout << "Main Function : " << a;
+    int *ptr = &a;
+
+    char ch = 'A';
+    char &cho = ch;
+
+    cout << cho;
+
+    cout << cho + a << endl;
+
+    cout << (*ptr += ch);
+    // int a = 5;
+
+    // changeA(&a);
+
+    // cout << "Main Function : " << a;
 
     // int x = 1, y = 2, z = 3;
     // multipleBy2(x, y, z);
