@@ -1,27 +1,29 @@
 #include <iostream>
 using namespace std;
 
-void printArr(int nums[], int n)
+int linearSearch(int *arr, int n, int key)
 
 {
 
-    cout << sizeof(nums) << endl;
+    
     for (int i = 0; i < n; i++)
     {
-        cout << nums[i] << ",";
+        if(arr[i] == key){
+            return i;
+        }
     }
-    cout << endl;
+    return -1;
 }
 
 int main()
 {
 
-    int arr[] = {1, 2, 3, 4, 5};
-    int n = sizeof(arr) / sizeof(int);
+    int arr[] = {2,4,6,8,10,12,14};
+    int key = 15;
+    int n = sizeof(arr)/sizeof(int);
 
-    // cout << sizeof(arr) << endl;
-
-    printArr(arr, n);
+    int idx = linearSearch(arr, n, key);
+    cout << idx << endl;
 
     return 0;
 }
