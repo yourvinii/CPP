@@ -11,28 +11,39 @@ void printArr(int *ptr, int n)
     cout << endl;
 }
 
+int binSearch(int *arr, int n, int key)
+{
+    int start = 0;
+    int end = n - 1;
+    
+
+    while (start <= end)
+    {
+        int mid = (start + end) / 2;
+
+        if (key == arr[mid])
+        {
+            return mid;
+        }
+        else if (arr[mid] < key)
+        {
+            start = mid + 1;
+        }
+        else
+        {
+            end = mid - 1;
+        }
+    }
+    return -1;
+}
+
 int main()
 {
 
-    int arr[] = {1, 2, 3, 4, 5};
+    int arr[] = {2, 4, 6, 8, 10, 12, 14, 16};
     int n = sizeof(arr) / sizeof(int);
 
-    int start = 0;
-    int end = n - 1;
-
-    while (start < end)
-    {
-        int temp = arr[start];
-        arr[start] = arr[end];
-        arr[end] = temp;
-        start++;
-        end--;
-    }
-
-    for (int i = 0; i < n; i++)
-    {
-        cout << arr[i] << " ";
-    }
+    cout << binSearch(arr, n, 16);
 
     return 0;
 }
