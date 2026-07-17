@@ -39,10 +39,16 @@ int binSearch(int *arr, int n, int key)
 int main()
 {
 
-    int arr[] = {5};
-    int b = 25;
-    arr = &b;
-    cout << arr;
+    int a = 25;
+
+    int *ptr = &a;
+
+    cout << ptr << " " << *ptr << endl;
+    ptr++;
+    cout << ptr << " " << *ptr << endl;
+    ptr--;
+    cout << ptr << " " << *ptr << endl;
+
     return 0;
 }
 
