@@ -66,9 +66,26 @@ void kadAlog(int *ptr, int n)
         {
             currSum = 0;
         }
-        maxSum = max(currSum ,maxSum);
+        maxSum = max(currSum, maxSum);
     }
-    cout << "maximum subarray sum : " << maxSum ;
+    cout << "maximum subarray sum : " << maxSum;
+}
+
+// kadane's  Algorithm
+void kadaneAlogrithm(int *ptr, int n)
+{
+    int currSum = 0;
+    int maxSum = INT_MIN;
+    for (int i = 0; i < n; i++)
+    {
+        currSum += ptr[i];
+        if (currSum < 0)
+        {
+            currSum = 0;
+        }
+        maxSum = max(currSum, maxSum);
+    }
+    cout << "Maximum Subarray Sum : " << maxSum << endl;
 }
 
 int main()
@@ -77,6 +94,6 @@ int main()
     int arr[] = {2, -3, 6, -5, 4, 2};
     int n = sizeof(arr) / sizeof(int);
 
-    kadAlog(arr, n);
+    kadaneAlogrithm(arr, n);
     return 0;
 }
